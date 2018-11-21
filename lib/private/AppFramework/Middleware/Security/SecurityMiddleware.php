@@ -52,6 +52,7 @@ use OCP\AppFramework\Http\JSONResponse;
 use OCP\AppFramework\OCSController;
 use OCP\IL10N;
 use OCP\INavigationManager;
+use OCP\ISession;
 use OCP\IURLGenerator;
 use OCP\IRequest;
 use OCP\ILogger;
