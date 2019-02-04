@@ -25,6 +25,7 @@ declare(strict_types=1);
 namespace OC\AppFramework\Middleware;
 
 use OCP\AppFramework\Http\Response;
+use OCP\AppFramework\Http\StandaloneTemplateResponse;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Middleware;
 use OCP\AppFramework\PublicShareController;
@@ -47,7 +48,7 @@ class AdditionalScriptsMiddleware extends Middleware {
 		 * There is no need to emit these signals on a public share page
 		 * There is a separate event for that already
 		 */
-		if ($controller instanceof PublicShareController) {
+		if ($controller instanceof PublicShareController || $controller instanceof StandaloneTemplateResponse) {
 			return $response;
 		}
 
